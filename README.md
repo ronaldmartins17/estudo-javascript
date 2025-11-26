@@ -1,2 +1,2 @@
-# estudo-javascript
- praticando javascript 
+# estudando html css e javascript
+ 

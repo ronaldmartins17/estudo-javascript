@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <header>
+        <nav>
+            <a href="pagina1.html">Pagina1</a>
+            <a href="pagina2.html">Pagina2</a>
+            <a href="while.html">While</a>
+            <a href="numbers.html">Numbers</a>
+            <a href="strings.html">Strings</a>
+            <a href="dom.html">Dom</a>
+            <a href="if-else.html">If Else</a>
+            <a href="switch-if-else.html">Switch if else</a>
+        </nav>
+    </header>
+    
+    <section>
+        <h2>Digite sua idade aqui !!!</h2>
+        <div>
+            <p>
+                Ano de Nascimento:   <!--imput do ano de nascimento-->
+                <input type="number" name="" id="numero">
+            </p>
+            <p>
+                Sexo: <!--um imput do tipo radio para selecionar o sexo-->
+                <input type="radio" name="sexo" id="mas" checked> 
+                <!--nos temos o mesmo nome pra indicar que esta tufo junto e o checked tambem 
+                ele indica que apenas um pode ser selecionado-->
+                <label for="mas">Masulino</label>
+                <input type="radio" name="sexo" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <input id="botao" type="button" value="Verificar" onclick="carregaridade()">
+            <!--aqui nos temos um botão que esta ligado a funão carregaridade, esse botão chama a funcão-->
+               
+            <div id="resultado">  <!-- nesta div esta o resultado da função-->
+               
+            </div>
+        <div id="">
+            <img id="foto" src="" alt=""> <!--aqui esta a div da foto que vai ser 
+            carregada conforme nescessario pelo javascrpt-->
+        </div>
+    </section>
+    <hr>
+    <footer><p>&copy;Ronald</p></footer>
+    <hr>
+    <script src="script.js"></script>
+</body>
+</html>

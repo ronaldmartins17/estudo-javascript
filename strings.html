@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+        <nav>
+        <a href="pagina1.html">Pagina1</a>
+        <a href="pagina2.html">Pagina2</a>
+        <a href="while.html">While</a>
+        <a href="numbers.html">Numbers</a>
+        <a href="strings.html">Strings</a>
+        <a href="dom.html">Dom</a>
+        <a href="if-else.html">If Else</a>
+        <a href="switch-if-else.html">Switch if else</a>
+
+
+    
+    </nav>
+    <h1>strings</h1>
+    <script>
+    /*  Boolean
+            true
+            false
+    */    
+
+
+        // String + String   para concatenação
+        // String() transforma em string
+        // '+'   concatena uma string
+        // `${}` template strings tbm concatena
+        // `${}` ou '+'    com strings qualquer um deles serve pra contatenar
+
+        var nome = window.prompt('Qual seu <br> nome?:')
+
+        document.write(`Ola, ${nome}. <br> Seu nome tem: ${nome.length} letras !!! <br>`)
+        document.write(`Seu nome em maiusculo: ${nome.toUpperCase()} <br>`)
+        document.write(`Seu nome em minusculo: ${nome.toLowerCase()}`)
+    
+        // .length  conta quantos caracteres tem a string 
+        // .toUpperCase() deixa os caracteres da string em MINUSCULO
+        // .toLowerCase() deixa os caracteres da string em minusculo
+        //  As tags html funcionão
+
+        // .toFixed()aqui tu define a quantidade de casas decimais
+        // .replace() subistitui um caractere por outro tipo:  subistitui um ponto por uma virgula
+            // EXEMPLO:
+            // n1=1598.5  // aqui n1 recebeu um numero inteiro
+            // n1.toFixed(2).replace('.',',')  // aqui com a função toFixed()fixsei 2 numeros como casas decimais
+            // na função .replace() subistitui o ponto por virgula
+
+
+        // .toLocaleString() faz uma busca por uma string mundial
+            //  EXEMPLO:
+            // .toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+            //  Aqui ele procurou strings em portugues com style e currency que é dinheiro e usou o real brasileiro
+            //  Currency é uma tradução de moeda, moeda corrente, dinheiro
+
+    </script>
+
+    <script>
+       
+
+        /*
+        window.alert('Uma mensagem de alerta')
+        window.confirm('VC e humano ???')
+        window.prompt('Qual seu nome')
+        // Number + Number   para adição
+        // String + String   para concatenação
+        // '+'   concatena uma string
+        // `${}` template strings tbm concatena
+        */
+/*
+        var n1 = Number.parseInt(prompt('Digite um Numero!:'))
+        var n2 = Number.parseFloat(prompt('Digite outro numero!:'))
+        var soma = n1 + n2
+        window.alert('a soma dos numeros é:' + soma + ' !!!')
+
+
+        var n4 = String(prompt('Digite um numero! :'))
+        var n5 = String(prompt('Digite outronumero! :'))
+        var soma2 = n4 + n5
+        window.alert(`A concatenação do ${n4} e do ${n5} é: ${soma2}`)
+        // String() transforma em string
+        // Number() transforma em numero pode ser inteiro ou quebrado
+        // Number.parseInt() transforma em numero inteiro
+        // Number.parseFloat() transforma em numero quebrado
+        // `${}` ou '+'    com strings qualquer um deles serve pra contatenar
+*/
+    </script>
+
+</body>
+</html>

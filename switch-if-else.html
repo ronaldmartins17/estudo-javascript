@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="pagina1.html">Pagina1</a>
+        <a href="pagina2.html">Pagina2</a>
+        <a href="while.html">While</a>
+        <a href="numbers.html">Numbers</a>
+        <a href="strings.html">Strings</a>
+        <a href="dom.html">Dom</a>
+        <a href="if-else.html">If Else</a>
+        <a href="switch-if-else.html">Switch if else</a>
+    </nav>
+    
+<!-- #region verificação de idade-->
+    <hr>
+    <div class="nome-idade">
+        <h1>digite seu nome e idade aqui:</h1>
+        <input type="text" name="" id="nome">
+        <input type="number" name="" id="idade">
+        <input type="button" value="Verificar idade" onclick="verificaridade()">
+        <div class="resultado">
+            <p>Carregando respostas .....</p>
+        </div>
+    </div>
+    <script>
+        function verificaridade() {
+            var nomeInput = document.querySelector("#nome") /*pega o input comoid nome e insere na variavel nomeInput*/
+            var nome = nomeInput.value /* tranforma a variavel nomeInput em string e adiiona na variavel nome */
+            var idadeInput = document.querySelector('#idade')
+            var idade = Number(idadeInput.value)
+            var res = document.querySelector(".resultado") 
+            /* assosia a div coma classe resultado navariavel res para mostrar o resultado inseridono input */
+
+            
+            if (!isNaN(nome)){
+                res.innerHTML = ` Digite um nome valido !` 
+                return
+            }
+        
+            if (idade >=100){   /* verifica se a idade é maior  que 100 */
+                res.innerHTML = ` Digite uma idade menor que 100`
+                return
+            }
+            if (idade == 0){  /* verifica se a idade é igual a 0 */
+                res.innerHTML = ` 0 nao e uma idade`
+                return
+            }
+            res.innerHTML = ` Seu nome é: ${nome} <br> Sua idade é: ${idade}` 
+            /*mostra na tela o resultado inserido nos input */
+
+            if (!isNaN(nome)){
+                res.innerHTML = `Digite um nome valido !` 
+                return
+            }
+        }
+    </script>
+<!-- #endregion -->
+<hr>
+<!-- #region teste soma de numeros-->
+    <div class="divteste">
+        <input type="text" id="teste1">
+        <input type="text" id="teste2">
+        <input type="button" value="verificando a soma" onclick="teste()">
+        <div class="resultadoo">
+            testando .....        
+        </div>
+    </div>
+    <script>      
+        function teste() {
+            var t1 = document.querySelector("#teste1")
+            var t2 = document.querySelector("#teste2")
+            var teste1 = Number(t1.value);
+            var teste2 = Number(t2.value);
+            var soma = teste1 + teste2
+            var res = document.querySelector(".resultadoo")
+            res.innerHTML = `O resutado é a soma é: ${soma}`
+            
+            /*
+            if/else:
+                Usado para avaliar uma ou mais condições, onde cada condição é avaliada separadamente. 
+                É flexível para condições complexas e não relacionadas.
+            */
+
+            if (isNaN(teste1) || isNaN(teste2)) {
+                res.innerHTML = "Digite números válidos!";
+                return; // Para a execução se não for número
+            }
+        }
+    </script>
+
+<!-- #endregion -->    
+<hr>
+<!-- #region praticando switch-->
+    <div>
+        <input type="text" name="" id="cor">
+        <input type="button" value="buscar" onclick="verificar()">
+        <div class="res">
+            <p>Resultado</p>
+        </div>
+    </div>
+
+       <script>
+        function verificar() {
+            var varcor = document.querySelector("#cor");
+            var cor = varcor.value;
+            var res = document.querySelector(".res");
+            res.innerHTML = `${cor}`;
+            /*
+            switch:
+                Usado para avaliar uma única expressão e 
+                compará-la com múltiplos casos. 
+                É mais eficiente quando se tem muitas
+                opções a serem verificadas com base no mesmo valor. 
+            */
+            switch (cor) {     
+                case 'vermelho':
+                    res.innerHTML = ` switch vermelho`
+                    break;
+                case 'lilas':
+                    res.innerHTML = `switch lilas`
+                    break;
+                default:
+                    res.innerHTML = `switch cor errada`
+                    break;
+                }        
+        }
+    </script>
+<!-- #endregion -->
+<hr>
+<!-- #region prticando if e else-->
+
+    <div>
+        <input type="text" id="nometxt">
+        <input type="number" id="idadenum">
+        <input type="button" value="Resultado" onclick="botao()">
+
+        <div class="result">
+            Carregando Resultado ....
+        </div>
+
+    </div>
+
+    <script>
+        function botao() {
+            var nome = document.querySelector("#nometxt")
+            var nometxt = nome.value
+            var idade = document.querySelector("#idadenum")
+            var idadenum = Number(idade.value)
+            var resu = document.querySelector(".result")
+
+            if (isNaN(idadenum) || idadenum <= 0) {
+                resu.innerHTML = "Digite uma idade válida!";
+                return; // Encerra a função //
+            }
+            if (idadenum == 1){ 
+                resu.innerHTML = `${nometxt}, Voce tem ${idadenum} ano ! <br> voce nao pode votar !`
+                return
+            }
+            
+            if (idadenum >=80) {
+                resu.innerHTML = `${nometxt}, Voce tem ${idadenum} anos ! <br> O seu voto é opcional !`
+            } else if (idadenum >=18){
+                resu.innerHTML = `${nometxt}, Voce tem ${idadenum} anos ! <br> O seu voto é obrigatorio !`
+            } else if (idadenum >= 16) {
+                resu.innerHTML = `${nometxt}, Voce tem ${idadenum} anos ! <br> O seu voto é opcional !`
+            } else if (idadenum <= 15) {
+                resu.innerHTML = `${nometxt}, Voce tem ${idadenum} anos ! <br> voce nao pode votar !`
+            }
+        }
+    </script>
+<!-- #endregion -->
+
+
+
+</body>
+</html>

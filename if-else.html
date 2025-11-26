@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else</title>
+    <style>
+        .div-de-fundo{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="pagina1.html">Pagina1</a>
+        <a href="pagina2.html">Pagina2</a>
+        <a href="while.html">While</a>
+        <a href="numbers.html">Numbers</a>
+        <a href="strings.html">Strings</a>
+        <a href="dom.html">Dom</a>
+        <a href="if-else.html">If Else</a>
+        <a href="switch-if-else.html">Switch if else</a>
+    </nav>
+
+<!-- #region  if else-->
+    <h1>Praticando If e Else</h1>
+    <div">
+        <h2>sistema de multa</h2>
+        <input type="number" name="velocidade" id="velocidade">
+        <input type="button" value="Verificar Multa" onclick="multa()">
+        <div class="sm"></div>
+    </div>
+    
+
+    <script>
+        function multa() {
+            var vel = document.querySelector('#velocidade')
+            resultado = document.querySelector('.sm')
+            var velo = Number(vel.value)
+            if (velo >60){
+                resultado.innerText = `sua velocidade é ${velo} km . voce foi multado !`
+            }else{
+                resultado.innerText = `Sua velocidade é ${velo} km dirita com cuidado`
+            }           
+        }
+    </script>
+    <!-- #endregion -->
+    <hr>
+<!-- #region pet-->
+    <h1>Praticando input</h1>
+    <div>
+        <h2>Coloque o Nome do seu Pet</h2>
+        <input type="text" name="nometxt" id="nometxt">
+        <input type="button" value="Enter" onclick="nomepet()">
+        <div class="petclass">
+            o nome do seu pet
+        </div>
+    </div>
+
+    <script>
+        function nomepet() {
+            var pet = document.querySelector('[name="nometxt"]')
+            resultadopet = document.querySelector('.petclass')
+            var pett = String(pet.value)
+            resultadopet.innerText = `o nome do seu pet ${pett}`
+        }
+    </script>
+    <!-- #endregion -->
+    <hr>
+<!-- #region texto-->
+    <div class="div-de-fundo">
+        <h2>colocando texto</h2>
+
+        <input type="text" name="texto" id="">
+        <input type="button" value="Enter" onclick="Enter()">
+        <p class="paragrafo">
+            Digite aqui seu texto:
+        </p>
+
+    </div>
+    
+    <script>
+        function Enter() {
+            var text = document.querySelector('[name="texto"]')
+            var texto  = String(text.value)
+            var resultado = document.querySelector('.paragrafo')
+            resultado.innerText = ` ${texto}`
+        }
+    </script>
+<!-- #endregion -->
+    <hr>
+<!-- #region dados usuario-->
+    <div class="dados-usuario">
+        <input type="text" name="nome-usuario" id="nome-usuario" placeholder="Digite aqui seu Nome:">
+        <input type="text" name="sobrenome-usuario" id="sobrenome-usuario" placeholder="Digite aqui seu Sobrenome">
+        <input type="date" name="data-usuario" id="data-usuario">
+        <input type="email" name="email-usuario" id="email-usuario" placeholder="Digite aqui seu Email">
+        <input type="button" value="Confirmar Dados" onclick="dadosusuario()">
+        <div class="resultado"><h1> Resultado </h1><div>
+    </div>
+    <script>
+        function dadosusuario() {
+            var varnome = document.querySelector("#nome-usuario")
+            var nome = String(varnome.value)
+
+            var varsobrenme = document.querySelector("#sobrenome-usuario")
+            var sobrenome  = String(varsobrenme.value)
+
+            var vardata = document.querySelector("#data-usuario")
+            var data = String(vardata.value)
+
+            var varemail = document.querySelector("#email-usuario")
+            var email = String(varemail.value)
+
+            var varresultado = document.querySelector(".resultado")
+            varresultado.innerHTML = `<h1>Seus Resutados</h1> <p> <br> Seu Nome; ${nome} <br> Seu Sobrenome: ${sobrenome}<br> Sua Data: ${data}<br> Seu Email; ${email} </p>`
+        }
+    </script>
+
+ <!-- #endregion -->
+</body>
+</html>
