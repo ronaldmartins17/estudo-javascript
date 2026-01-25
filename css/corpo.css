@@ -2,27 +2,7 @@ body{
     background-color: rgb(170, 173, 173);
     margin: 0%;
 }
-header{
-    margin: auto;
-    text-align: center;
-    color: rgb(214, 212, 212);
-}
-nav{
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgba(0, 0, 0, 0.329);
-    height: 35px;
-    padding-top: 7px;
-    padding-bottom: 3px;
 
-}
-nav a{
-    color: white;
-    padding-right: 7px;
-    padding-left: 7px;
-
-
-}
 section{
     background-color:rgba(0, 0, 0, 0.139);
     width: 600px;
@@ -32,6 +12,7 @@ section{
     border-radius: 20px;
     text-align: center;
 }
+
 h1{
     background-color: rgb(7, 7, 91);
     border-radius: 10%;
@@ -54,8 +35,6 @@ p{
     width: 250px;
     height: 30px;
 }
-
-
 
 footer{
     height: 30px;

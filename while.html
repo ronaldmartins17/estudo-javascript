@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cabecario.css">
+    <link rel="stylesheet" href="css/corpo.css">
     <title>while laços de repetição</title>
 </head>
 <body>
@@ -12,6 +13,7 @@
             <a href="pagina1.html">Pagina1</a>
             <a href="pagina2.html">Pagina2</a>
             <a href="while.html">While</a>
+            <a href="exercicios-de-laço.html">Exercicios de laço</a>
             <a href="numbers.html">Numbers</a>
             <a href="strings.html">Strings</a>
             <a href="dom.html">Dom</a>
@@ -42,8 +44,43 @@
         } while (num <= 2); <br>
         */
         </p>
+
+        <pre>
+            <code>
+        let nota = Number(prompt('digite uma nota entre 0 e 10: '));
+        while (nota < 0 || nota > 10 || isNaN(nota)){ 
+            nota = Number(prompt('nota inválida! digite uma nota entre 0 e 10: '))
+        }
+        alert(`nota atual: ${nota}`)
+            </code>
+        </pre>
     </section>
+    <section>
+        <h2>Tabuada</h2> <!-- tabuada de multiplicação -->
+        <input type="number" name="" id="numero">  <!-- input para o usuário digitar o número -->
+        <input type="button" value="gerar tabuada" onclick="tabuada()">  <!-- botão para gerar a tabuada -->
+        <div id="resultado">  <!-- div onde o resultado será exibido -->
+            <p>
+                Sua Tabuada !
+            </p>
+        </div>
+    </section>
+
     <script>
+/* #region exercício 1 - validação de nota
+        // Faça um programa que peça uma nota, entre zero e dez. 
+        // Mostre uma mensagem caso o valor seja inválido e 
+        // continue pedindo até que o usuário informe um valor válido. 
+        // Após isso, mostre a nota informada.
+
+        let nota = Number(prompt('digite uma nota entre 0 e 10: '))
+        while (nota < 0 || nota > 10 || isNaN(nota)){ 
+        // Validação de NaN: Adicionada verificação isNaN() para evitar valores não numéricos
+            nota = Number(prompt('nota inválida! digite uma nota entre 0 e 10: '))
+        }
+        alert(`nota atual: ${nota}`)
+ #endregion */
+
         /* uma laço while(laço do repetição) comum 
         var num = 1
         while (num <= 2) {
@@ -51,17 +88,40 @@
             window.alert('lop')  
         }
         */
-        /* um laço de repetição que executa a função dps verifica o 
-        while(laõ de repetição) pra saber se entra no loopou não  
+       
+        // um laço de repetição que executa a função dps verifica o 
+        //laçõ de repetição pra saber se entra no loop não  
+        
+        /*numero = 3
         do {
-            num = num+1
+            numero = numero+1
             window.alert('lop2')
-        } while (num <= 2);
+        } while (numero <= 4);
         */
-
+/*
         for(var num=1; num<=7; num=num+1){
             window.alert('loop')
         }
+*/
+/*
+        for(let n=1; n<=3;n=n+1){
+            window.alert(`loop numero: ${n}`)
+
+        }
+        for(let n=4; n>=1; n=n-1){
+            window.alert(`contagem regresiva: numero: ${n}`)
+        }
+*/      // tabuada de multiplicação
+        function tabuada(){
+            let numero = document.querySelector('#numero'); // Pega o valor do input
+            let num = Number(numero.value); // Converte o valor do input para número
+            let resultado = document.querySelector('#resultado'); // Pega a div onde o resultado será exibido
+            resultado.innerHTML = `Tabuada do ${num}: <br> `; // Limpa o resultado anterior e adiciona o título
+            for (let n=1; n<=10; n=n+1) { // Laço para gerar a tabuada de 1 a 10
+                let n2 = n*num; // Calcula o resultado da multiplicação
+                resultado.innerHTML+=`${num} x ${n} = ${n2} <br>`; // Adiciona cada linha da tabuada ao resultado
+            }
+        } // fim da função tabuada
     </script>
 </body>
 </html>

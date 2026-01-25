@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/exercicio.css">
+    <title>Exercicios de Laço</title>
+
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Titl</h1>
+    </header>
+
+    <div id="corpo">    
+        <section id="conte">
+            <h1>Exercicios de Laço</h1>
+            <div> <!--codigo html inserir nmero-->
+                <input type="number" id="notaInput" placeholder="Digite uma nota entre 0 e 10">
+                <button onclick="validarNota()">Validar Nota</button>
+                <p id="res">
+                    Resultado aqui !!!
+                </p>
+            </div>
+            <hr>
+            <h2>Código validar Nota</h2>
+            <p class="paragrafroh2">código para validar uma nota entre 0 e 10 usando if.</p>
+            <p class="paragrafroh2">Parte html do código</p>
+            <div class="codigo">
+                <pre><code> <!--codigo html inserir nmero-->
+    &lt;input type=number id="notaInput" placeholder="Digite uma nota entre 0 e 10"&gt;
+    &lt;button onclick="validarNota()">Validar Nota &lt/button&gt;
+                
+    &lt;p id="res"&gt;
+        Resultado aqui !!!
+    &lt;/p&gt;
+                </code></pre>
+            </div>
+            <hr>
+            <p class="paragrafroh2">Parte javascript do código</p>
+            <div class="codigo">
+                <pre><code> <!--codigo javascript validar nota-->
+    &lt;script&gt;
+
+    function validarNota() {
+        const notaInput = document.querySelector("#notaInput");
+        let nota = Number(notaInput.value);
+        const resultado = document.querySelector("#res");
+        if (nota < 0 || nota > 10 || isNaN(nota)){ 
+        //resultado.innerText = `nota inválida! digite uma nota entre 0 e 10: `; 
+            resultado.innerText = `digite nvamente uma nota válida entre 0 e 10.`;
+            notaInput.value = ''; // Limpa o campo de entrada
+            notaInput.focus(); // Foca no campo novamente
+            return false;
+        }else{
+            resultado.innerText = `nota atual: ${nota}`;
+        }
+    }
+    &lt;/script&gt;
+                </code> </pre> 
+            </div>
+        </section>
+        <section id="men">
+            <h1>Menu</h1>
+                    <nav>
+                <a href="pagina1.html">Pagina1</a>
+                <a href="pagina2.html">Pagina2</a>
+                <a href="while.html">While</a>
+                <a href="exercicios-de-laço.html">Exercicios de laço</a>
+                <a href="numbers.html">Numbers</a>
+                <a href="strings.html">Strings</a>
+                <a href="dom.html">Dom</a>
+                <a href="if-else.html">If Else</a>
+                <a href="switch-if-else.html">Switch if else</a>
+            </nav>
+        </section>
+        <hr>
+    </div>
+    <script>
+        function validarNota() {
+            const notaInput = document.querySelector("#notaInput");
+            let nota = Number(notaInput.value);
+            const resultado = document.querySelector("#res");
+            if (nota < 0 || nota > 10 || isNaN(nota)){ 
+            //resultado.innerText = `nota inválida! digite uma nota entre 0 e 10: `; 
+                resultado.innerText = `digite nvamente uma nota válida entre 0 e 10.`;
+                notaInput.value = ''; // Limpa o campo de entrada
+                notaInput.focus(); // Foca no campo novamente
+                return false;
+            }else{
+                resultado.innerText = `nota atual: ${nota}`;
+                return true;
+            }
+            //alert(`nota atual: ${nota}`);
+        }
+ /*       let nota = Number(prompt('digite uma nota entre 0 e 10: '));
+        while (nota < 0 || nota > 10 || isNaN(nota)){ 
+            nota = Number(prompt('nota inválida! digite uma nota entre 0 e 10: '));
+        }
+        alert(`nota atual: ${nota}`);
+*/
+   </script>
+    
+</body>
+</html>
