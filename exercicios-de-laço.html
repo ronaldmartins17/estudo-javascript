@@ -3,104 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="css/exercicio.css">
     <title>Exercicios de Laço</title>
-
 </head>
-<body onload="carregar()">
+<body>
     <header>
-        <h1>Titl</h1>
+        <h1>Title</h1>
     </header>
+    <div id="corpo">
+        <nav>
+            <h1>MENU</h1>
+            <a href="pagina1.html">Pagina1</a>
+            <a href="pagina2.html">Pagina2</a>
+            <a href="while.html">While</a>
+            <a href="exercicios-de-laço.html">Exercicios de laço</a>
+            <a href="numbers.html">Numbers</a>
+            <a href="strings.html">Strings</a>
+            <a href="dom.html">Dom</a>
+            <a href="if-else.html">If Else</a>
+            <a href="switch-if-else.html">Switch if else</a>
+        </nav>
+        <div id="conteudo">
+<!-- #region -->    <!--codigo html inserir nmero-->
+            <h1>Exercicio: Validação de Numero de 0 a 10</h1>
+            <section>   
+                <div class="exercicio"> 
+                    <h2>Validação de Numero de 0 a 10</h2>
+                    <input type="number" id="notaInput" placeholder="Digite uma nota entre 0 e 10">
+                    <button onclick="validarNota()">Validar Numero</button>
+                    <p id="res">
+                        Resultado aqui !!!
+                    </p>
+                </div>
+                <h2>Código para validar um numero entre 0 e 10 usando if.</h2>
+                <div class="codigo"> <!--codigo html-->
+                    <h2>Seção HTML</h2>
+                    <pre><code>
+&lt;input type=number id="notaInput" placeholder="Digite uma nota entre 0 e 10"&gt;
+&lt;button onclick="validarNota()">Validar Nota &lt/button&gt;
+            
+&lt;p id="res"&gt;
+    Resultado aqui !!!
+&lt;/p&gt;
+                    </code></pre>
+                </div>
 
-    <div id="corpo">    
-        <section id="conte">
-            <h1>Exercicios de Laço</h1>
-            <div> <!--codigo html inserir nmero-->
-                <input type="number" id="notaInput" placeholder="Digite uma nota entre 0 e 10">
-                <button onclick="validarNota()">Validar Nota</button>
-                <p id="res">
-                    Resultado aqui !!!
-                </p>
-            </div>
-            <hr>
-            <h2>Código validar Nota</h2>
-            <p class="paragrafroh2">código para validar uma nota entre 0 e 10 usando if.</p>
-            <p class="paragrafroh2">Parte html do código</p>
-            <div class="codigo">
-                <pre><code> <!--codigo html inserir nmero-->
-    &lt;input type=number id="notaInput" placeholder="Digite uma nota entre 0 e 10"&gt;
-    &lt;button onclick="validarNota()">Validar Nota &lt/button&gt;
-                
-    &lt;p id="res"&gt;
-        Resultado aqui !!!
-    &lt;/p&gt;
-                </code></pre>
-            </div>
-            <hr>
-            <p class="paragrafroh2">Parte javascript do código</p>
-            <div class="codigo">
-                <pre><code> <!--codigo javascript validar nota-->
-    &lt;script&gt;
-
+                <div class="codigo"> <!--codigo javascript-->
+                    <h2>Seção JavaScript</h2>
+                    <pre><code>
+&lt;script&gt;
     function validarNota() {
         const notaInput = document.querySelector("#notaInput");
         let nota = Number(notaInput.value);
         const resultado = document.querySelector("#res");
         if (nota < 0 || nota > 10 || isNaN(nota)){ 
-        //resultado.innerText = `nota inválida! digite uma nota entre 0 e 10: `; 
             resultado.innerText = `digite nvamente uma nota válida entre 0 e 10.`;
             notaInput.value = ''; // Limpa o campo de entrada
-            notaInput.focus(); // Foca no campo novamente
+            notaInput.focus(); // Foca no campo novamente 
             return false;
         }else{
             resultado.innerText = `nota atual: ${nota}`;
         }
     }
-    &lt;/script&gt;
-                </code> </pre> 
-            </div>
-        </section>
-        <section id="men">
-            <h1>Menu</h1>
-                    <nav>
-                <a href="pagina1.html">Pagina1</a>
-                <a href="pagina2.html">Pagina2</a>
-                <a href="while.html">While</a>
-                <a href="exercicios-de-laço.html">Exercicios de laço</a>
-                <a href="numbers.html">Numbers</a>
-                <a href="strings.html">Strings</a>
-                <a href="dom.html">Dom</a>
-                <a href="if-else.html">If Else</a>
-                <a href="switch-if-else.html">Switch if else</a>
-            </nav>
-        </section>
-        <hr>
+&lt;/script&gt;
+                    </code> </pre> 
+                </div>
+
+            </section>
+<!-- #endregion -->
+
+<!-- #region -->    <!--codigo html validar usuario e senha-->
+            <h1>Exercício: Validação de Usuário e Senha</h1>
+            <section>   
+                <div class="exercicio"> 
+                    <h2>Validação de Usuario e Senha</h2>
+                 
+                    <input type="text" id="usuario" placeholder="Digite seu nome aqui !">
+                    <input type="password" id="senha" placeholder="Digite sua senha aqui !">
+                    <button onclick="validarUsuarioSenha()">Validar</button>
+                    <input type="button" value="Verificar" onclick="validardados()">
+                    <p id="resultadoUsuarioSenha">
+                        Resultado aqui !!!
+                </div>
+                <h2>Código para validar usuário e senha</h2>
+                <div class="codigo">  <!--codigo html-->
+                    <h2>Seção HTML</h2>
+                    <pre><code>        
+&lt;input type="text" id="usuario" placeholder="Digite seu nome aqui !"&gt;
+&lt;input type="password" id="senha" placeholder="Digite sua senha aqui !"&gt;
+&lt;button onclick="validarUsuarioSenha()"&gt;Validar&lt;/button&gt;
+
+&lt;p id="resultadoUsuarioSenha"&gt;
+    Resultado aqui !!!
+&lt;/p&gt;
+                    </code></pre>
+                </div>
+
+                <div class="codigo"> <!--codigo javascript-->
+                    <h2>Seção JavaScript</h2>
+                    <pre><code>        
+&lt;script&gt;
+    function validarUsuarioSenha(){
+        const usuarioInput = document.querySelector("#usuario");
+        const usuario = usuarioInput.value.trim;
+        const senhaInput = document.querySelector("#senha");
+        const senha = senhaInput.value;
+        const resultadoUsuarioSenha = document.querySelector("#resultadoUsuarioSenha");
+        if (usuario === '' || senha === '') {
+            resultadoUsuarioSenha.innerText = "Por favor, preencha todos os campos.";
+            resultadoUsuarioSenha.style.color = 'orange';
+            return false;
+        }else if (senha === usuario){
+            resultadoUsuarioSenha.innerText = `A senha nao pode ser igual ao nome de usuário. Por favor, tente novamente.`;   
+            senhaInput.value = ''; // Limpa o campo de senha
+            senhaInput.focus(); // Foca no campo de senha 
+            resultadoUsuarioSenha.style.color = 'red'; // Altera a cor do texto para vermelho  
+            return false;
+        }else{
+            resultadoUsuarioSenha.innerText = `Usuário e senha cadastrados com sucesso!`;
+            resultadoUsuarioSenha.style.color = 'green'; // Altera a cor do texto para verde
+            return true;
+        }
+    }
+&lt;/script&gt;
+                    </code></pre>   
+                </div>
+            </section>
+<!-- #endregion -->
+
+<!-- #region -->    <!--codigo html validar nome, idade, salario, sexo e estado civil-->
+            <h1>Exercício: Validação de Nome, Idade, Salário, Sexo e Estado Civil</h1>
+            <section>
+                <div class="exercicio">
+                    <h2>Validação de Nome, Idade, Salário, Sexo e Estado Civil</h2>
+                    <input type="text" id="nome" placeholder="Digite o seu Nome aqui!">
+                    <input type="number" id="idade" placeholder="Digite a sua Idade aqui!">
+                    <input type="number" id="salario" placeholder="Digite o seu Salario aqui!">
+                    <br>
+                    sexo: <!-- input do tipo radio pra selecionar o sexo-->
+                    <input type="radio" name="sexo" id="mas" value="Masculino">  
+                    <!-- sempre lembrar de usar value pois posso pegar o valor e manipular de varias formas --> 
+                    <label for="mas">Masculino</label>
+                    <input type="radio" name="sexo" id="fem" value="Feminino">
+                    <!-- label tambem é essencial usar para garantir a melhor acessibilidade e melhor especiencia de usuario em formularios-->
+                    <label for="fem">Feminino</label>
+                    <!--O <label> descreve o campo, enquanto o <input> recebe o dado. -->
+                    <br>
+                    Estado Civil:
+                    <input type="radio" name="estadocivil" id="solteiro" value="Solteiro(a)"> 
+                    <!-- todos tem o mesmo name porque assim eles ficam relacionados um com o outro-->
+                    <label for="solteiro">Solteiro</label>
+                    <input type="radio" name="estadocivil" id="casado" value="Casado(a)"> 
+                    <!--Atributo name igual: Para que eles funcionem como um grupo único,      
+                        todos os input de rádio devem ter o mesmo valor no atributo name. -->
+                    <label for="casado">Casado</label>
+                    <input type="radio" name="estadocivil" id="divorciado" value="Divorciado(a)">
+                    <label for="divorciado">Divorciado</label>
+                    <input type="radio" name="estadocivil" id="viuvo" value="Viuvo(a)">
+                    <label for="viuvo">Viuvo</label>
+                    <button type="button" onclick="validardados()">Validar Dados</button>
+                    <p id="informacoes">
+                        Suas Informaçoes aqui
+                        <br>
+                        <br>
+                    </p>
+                </div>
+            </section>
+<!-- #endregion -->
+        </div>
     </div>
-    <script>
-        function validarNota() {
-            const notaInput = document.querySelector("#notaInput");
-            let nota = Number(notaInput.value);
-            const resultado = document.querySelector("#res");
-            if (nota < 0 || nota > 10 || isNaN(nota)){ 
-            //resultado.innerText = `nota inválida! digite uma nota entre 0 e 10: `; 
-                resultado.innerText = `digite nvamente uma nota válida entre 0 e 10.`;
-                notaInput.value = ''; // Limpa o campo de entrada
-                notaInput.focus(); // Foca no campo novamente
-                return false;
-            }else{
-                resultado.innerText = `nota atual: ${nota}`;
-                return true;
-            }
-            //alert(`nota atual: ${nota}`);
-        }
- /*       let nota = Number(prompt('digite uma nota entre 0 e 10: '));
-        while (nota < 0 || nota > 10 || isNaN(nota)){ 
-            nota = Number(prompt('nota inválida! digite uma nota entre 0 e 10: '));
-        }
-        alert(`nota atual: ${nota}`);
-*/
-   </script>
-    
+
+
+<script src="javascript/exerciciosjavascript.js"></script>
 </body>
 </html>
