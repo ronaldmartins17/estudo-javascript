@@ -10,7 +10,7 @@
     <header>
         <h1>Title</h1>
     </header>
-    <div id="corpo">
+    <div id="corpo"> <!-- corpo -->
         <nav>
             <h1>MENU</h1>
             <a href="pagina1.html">Pagina1</a>
@@ -23,7 +23,7 @@
             <a href="if-else.html">If Else</a>
             <a href="switch-if-else.html">Switch if else</a>
         </nav>
-        <div id="conteudo">
+        <div id="conteudo"> <!-- div conteudo-->
 <!-- #region -->    <!--codigo html inserir nmero-->
             <h1>Exercicio: Validação de Numero de 0 a 10</h1>
             <section>   
@@ -80,8 +80,7 @@
                  
                     <input type="text" id="usuario" placeholder="Digite seu nome aqui !">
                     <input type="password" id="senha" placeholder="Digite sua senha aqui !">
-                    <button onclick="validarUsuarioSenha()">Validar</button>
-                    <input type="button" value="Verificar" onclick="validardados()">
+                    <button onclick="validarUsuarioSenha()">Validar Usuario e Senha</button>
                     <p id="resultadoUsuarioSenha">
                         Resultado aqui !!!
                 </div>
@@ -140,8 +139,8 @@
                     <input type="number" id="idade" placeholder="Digite a sua Idade aqui!">
                     <input type="number" id="salario" placeholder="Digite o seu Salario aqui!">
                     <br>
-                    sexo: <!-- input do tipo radio pra selecionar o sexo-->
-                    <input type="radio" name="sexo" id="mas" value="Masculino">  
+                    <label>Sexo:</label> 
+                    <input type="radio" name="sexo" id="mas" value="Masculino">  <!-- input do tipo radio pra selecionar o sexo-->
                     <!-- sempre lembrar de usar value pois posso pegar o valor e manipular de varias formas --> 
                     <label for="mas">Masculino</label>
                     <input type="radio" name="sexo" id="fem" value="Feminino">
@@ -149,7 +148,7 @@
                     <label for="fem">Feminino</label>
                     <!--O <label> descreve o campo, enquanto o <input> recebe o dado. -->
                     <br>
-                    Estado Civil:
+                    <label>Estado Civil:</label>
                     <input type="radio" name="estadocivil" id="solteiro" value="Solteiro(a)"> 
                     <!-- todos tem o mesmo name porque assim eles ficam relacionados um com o outro-->
                     <label for="solteiro">Solteiro</label>
@@ -168,10 +167,94 @@
                         <br>
                     </p>
                 </div>
+                <div class="codigo"> <!-- codigo html -->
+                    <h2>Seção HTML</h2>
+                    <code><pre>
+&lt;input type="text" id="nome" placeholder="Digite o seu Nome aqui!"&gt;
+&lt;input type="number" id="idade" placeholder="Digite a sua Idade aqui!"&gt;
+&lt;input type="number" id="salario" placeholder="Digite o seu Salario aqui!"&gt;
+&lt;br&gt;
+
+&lt;sexo:&gt;
+&lt;input type="radio" name="sexo" id="mas" value="Masculino" &gt;
+&lt;label for="mas"&gt; Masculino &lt;/label&gt;
+&lt;input type="radio" name="sexo" id="fem" value="Feminino" &gt;
+&lt;label for="fem"&gt; Feminino &lt;/label&gt;
+&lt;br&gt;
+
+&lt;Estado Civil:&gt;
+&lt;input type="radio" name="estadocivil" id="solteiro" value="Solteiro(a)" &gt;
+&lt;label for="solteiro"&gt;Solteiro&lt;/label&gt;
+
+&lt;input type="radio" name="estadocivil" id="casado" value="Casado(a)" &gt;
+&lt;label for="casado"&gt; Casado &lt;/label&gt;
+
+&lt;input type="radio" name="estadocivil" id="divorciado" value="Divorciado(a)"&gt;
+&lt;label for="divorciado"&gt; Divorciado &lt;/label&gt;
+
+&lt;input type="radio" name="estadocivil" id="viuvo" value="Viuvo(a)"&gt;
+&lt;label for="viuvo"&gt; Viuvo &lt;/label&gt;
+
+&lt;button type="button" onclick="validardados()"&gt;Validar Dados &lt;/button&gt;
+&lt;p id="informacoes"&gt;
+    Suas Informaçoes aqui
+&lt;/p&gt;
+                </pre></code> 
+                </div> <!--fim codigo html-->
+
+                <div class="codigo"> <!-- codigo javascript -->
+                    <h2>Seção JavaScript</h2>
+                    <code><pre>
+&lt;script&gt;
+
+    function validardados() {
+        const nomeInput = document.querySelector("#nome"); 
+        const nome = nomeInput.value;
+
+        const idadeInput = document.querySelector("#idade");
+        const idade = Number(idadeInput.value);
+
+        const salarioInput = document.querySelector("#salario");
+        const salario = Number(salarioInput.value);
+
+        const sexo = document.querySelector('[name="sexo"]:checked'); // pega os valores do input sexo e armazena na variavel sexo
+        //Usamos let para variável que muda muda o valor 
+        let genero = sexo ? sexo.value:'';    
+        // coloca o valor de sexo na variavel genero como um array assim posso escolher selecionando o arquivo como um array
+
+        const estadocivil = document.querySelector('[name="estadocivil"]:checked');
+        let relacionamento = estadocivil ? estadocivil.value:'';  // Use de let para variável que muda
+
+        const informacoes = document.querySelector("#informacoes");
+
+        if (nome.length < 3) {
+        informacoes.innerText=`tamanho ${nome}  menor que 3 caracteres`;
+        return false;
+        }else if(idade < 0 || idade > 150) {
+            informacoes.innerText=`sua idade esta errada voce tem: ${idade} anos`;
+            return false;
+        }else if (salario <= 0){
+            informacoes.innerText=`o seu salario é : ${salario}  trabalho escravo é errado`;
+            return false;
+        }else if (genero == '') {
+            informacoes.innerText=`selecione o sexo!`;
+            return false;
+        }else if(relacionamento ==''){
+            informacoes.innerText=`selecione o estado civil!`;
+            return false;
+        }else{
+            informacoes.innerText=`sexo: ${genero}  e  ${relacionamento}`;
+            return true;
+        }
+    }
+&lt;/script&gt;
+                    </pre></code>
+                </div>  <!-- fim codigo javascrip-->
+
             </section>
 <!-- #endregion -->
-        </div>
-    </div>
+        </div> <!-- fim div conteudo-->
+    </div> <!-- fim div corpo-->
 
 
 <script src="javascript/exerciciosjavascript.js"></script>
