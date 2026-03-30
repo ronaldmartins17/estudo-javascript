@@ -33,16 +33,16 @@ function validarNota() {
 
 function validarUsuarioSenha(){
     const usuarioInput = document.querySelector("#usuario");
-    const usuario = usuarioInput.value.trim;
+    const usuario = usuarioInput.value.trim();  //trim()  para impédir de validar espaços
     const senhaInput = document.querySelector("#senha");
     const senha = senhaInput.value;
     const resultadoUsuarioSenha = document.querySelector("#resultadoUsuarioSenha");          
 
-    if (usuario === '' && senha === '') {
+    if (usuario === '' || senha === '') {
         resultadoUsuarioSenha.innerText = "Por favor, preencha todos os campos.";
         resultadoUsuarioSenha.style.color = 'orange';
         return false;
-    }else if (senha === usuario){
+    }else if (usuario === senha){
         resultadoUsuarioSenha.innerText = `A senha nao pode ser igual ao nome de usuário. Por favor, tente novamente.`;   
         senhaInput.value = ''; // Limpa o campo de senha
         senhaInput.focus(); // Foca no campo de senha 
@@ -66,7 +66,6 @@ function validarUsuarioSenha(){
     Estado Civil: 's', 'c', 'v', 'd';
     Dica: se sua variável é texto, o tamanho dela está armazenado em: texto.length  
     */
-
 
 function validardados() {
     const nomeInput = document.querySelector("#nome"); 
@@ -109,6 +108,125 @@ function validardados() {
     }
 
 }
-//
+// #endregion
+
+// #region calculo populacional
+    /*
+    Supondo que a população de um país A seja da ordem de 80000 habitantes 
+    com uma taxa anual de crescimento de 3% e que a população de B seja 200000 habitantes 
+    com uma taxa de crescimento de 1.5%. 
+    Faça um programa que calcule e escreva o número de anos necessários para que a população do país 
+    A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
+    */
+
+let populacaoA = 80000;   //numero de Habitantes da cidadeA
+let taxaA = 0.03;  //taxa de crescimento anual da população 3%
+let populacaoB = 200000;  //numero de Habitantes da cidadeB
+let taxaB = 0.015;  //taxa de crescimento anual da populacao 1.5% 
+let anos = 0;  //contador de anos
+if (populacaoA > populacaoB) { //verifica se a populaçao da cidade A e maior 
+    console.log(`A cidade A tem mais abitantes que a cidadeB  `);
+    console.log(`O numero de habitantes da cidadeA é: ${populacaoA}`);  
+    console.log(`O numero de habitantes da cidadeB é: ${ populacaoB}`);
+} else {  //se a população da cidade B for maior entao entra no loop
+    while (populacaoA < populacaoB) {
+    populacaoA += populacaoA * taxaA;  //cresce 3% ao ano
+    populacaoB += populacaoB * taxaB;  //cresce 1.5% ao ano
+    anos++; //incrementa contador de anos 
+    }
+}
+console.log(`Anos necessários: ${anos}`);
+console.log(`População A: ${Math.round(populacaoA)} habitantes`);
+console.log(`População B: ${Math.round(populacaoB)} habitantes`);
+// #endregion
+
+// #region calculo populacional com input no html
+    /*
+    Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. 
+    Valide a entrada e permita repetir a operação.
+    */
+
+function taxacrescimento() {
+    const populacaoAinput = document.querySelector("#populacao-A").value;  
+    const taxaAinput = document.querySelector("#taxa-A").value;
+
+    const populacaoBinput = document.querySelector("#populacao-B").value; // aqui eu uso value para verificar os valores
+                                                                         //  antes de converter para number
+    const taxaBinput = document.querySelector("#taxa-B").value;
+
+    const resultado = document.querySelector("#resul");
+
+    let anos = 0
+    const max_anos = 1000
+
+    if (populacaoAinput.trim() === "" || populacaoBinput.trim() === "" || taxaAinput.trim() === "" || taxaBinput.trim() === "") {
+        resultado.innerText=`Preencha todas as informaçoes`;
+        return;
+    }
+
+    let populacaoA = Number(populacaoAinput); // let para variavel que modifica os valores
+    let populacaoB = Number(populacaoBinput);
+
+    const taxaA = Number(taxaAinput) / 100;  // const para variavel que nao modifica valores
+    const taxaB = Number(taxaBinput) / 100;
+
+
+    if(isNaN(populacaoA) || isNaN(populacaoB) || isNaN(taxaA) || isNaN(taxaB)){ // verifica se e numero
+        resultado.innerText=`Insira apenas numero`;
+        return;  // Você usa return false em algumas validações e apenas return em outras. 
+                // Como a função não precisa retornar um valor, use apenas return; em todos os casos para manter o padrão.
+    }else if(populacaoA > populacaoB){  // vaerifica se a população de A é maior que B
+        resultado.innerText=`População A ja é maior que população B`
+        return;
+    }else if(populacaoA <= 0 || populacaoB <=0){  // verifica se a população e maior que zero
+        resultado.innerText=`População nao pode ser negativa`
+        return;
+    }else {
+        while (populacaoA <= populacaoB && anos < max_anos){  // o laço verifica se A e maior que B, e se o ano é menor que mil
+            populacaoA += populacaoA * taxaA;
+            populacaoB += populacaoB * taxaB;
+            anos++;
+        }
+    }
+    if (anos === max_anos){
+        resultado.innerText=`os anos ja passaram do limite`;
+        return;
+    }
+    
+    resultado.innerHTML=`População A: ${Math.round(populacaoA)} habitantes.
+    <br> População B: ${Math.round(populacaoB)} habitantes. 
+    <br> Se passaram: ${anos} anos `
+    
+}
+// #endregion
+
+// #region programa que imprime na tela os números de 1 a 20
+    /*
+    Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. 
+    Depois modifique o programa para que ele mostre os números um ao lado do outro.
+    */
+
+   // Programa 1
+for(let n=1; n<=20; n++){
+    console.log(n)
+}
+
+
+// Programa 2
+let num = []  // uma lista vasia pra receber os numeros
+let linha = ''  // uma string vasia pra receber os numeros
+for(let n=1; n<=20; n++){
+    num.push(n) // push adiciona cada valor do loop na lista
+    linha += n + ' '
+}
+// dois resultados um feito com string e outro usando listas(ARRAY)  
+console.log(num.join(' ')) //ara a exibição lado a lado, join(" ") cria uma string com os números separados por espaço.
+console.log(linha)
 
 // #endregion
+
+
+
+
+
+

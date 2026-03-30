@@ -74,6 +74,7 @@
             !=  diferente que
 
         operadores de identidade
+        Uso de == vs ===: Prefira === para comparação estrita, evitando conversões automáticas.
             ===  igual que o mesmo tipo
                 string === string
                 number === number
@@ -84,19 +85,21 @@
                 number !== string        
 
         Operadores Logicos
-                !   negação     (não)
+            !   negação     (não)
                 se não for true então e false
                 se for true entao e falso
                 (esse operador e do contra) 
             
-                &&  conjunção   (e)
+            &&  conjunção   (e)
+                Use && quando quiser exigir que todas as condições sejam verdadeiras para executar algo.
                 basta que os 2 sejam verdadeiros pra funcionar
-                true  ||  true     ok
-                true  ||  false    deu ruim
-                false ||  true     deu ruim
-                false ||  false    deu ruim        
-            
-                ||  disjunção   (ou)
+                true  &&  true     ok
+                true  &&  false    deu ruim
+                false &&  true     deu ruim
+                false &&  false    deu ruim        
+
+            ||  disjunção   (ou)
+                Use || quando quiser validar que pelo menos um campo falhou (campo vazio ou inválido).
                 basta que 1 seja verdadeiro pra funcionar
                 ex:
                 true  ||  true     ok
@@ -134,9 +137,31 @@
                 !  %%  ||
     */
 
-    
+    /*
+    Principais Métodos de Array JavaScript:
+Adicionar/Remover: push() (final), pop() (final), unshift() (início), shift() (início), 
+splice() (qualquer posição).
+
+Transformação/Seleção: map() (cria novo array), filter() (filtra elementos), 
+slice() (cópia parte do array), concat() (une arrays).
+
+Iteração/Busca: forEach() (itera), find() (acha elemento), findIndex() (acha índice), indexOf(), 
+includes() (verifica existência).
+
+Ordenação/Ordem: sort() (ordena), reverse() (inverte).
+
+Redução/Validação: reduce() (reduz a um valor), every() (todos passam), some() (algum passa). 
+
+ +5
+Os métodos map, filter e reduce são pilares da programação funcional em JavaScript, 
+permitindo manipular dados de forma imutável e eficiente. 
 
 
+
+O JavaScript possui mais de 30 métodos nativos para arrays, 
+divididos entre os que modificam o array original (mutáveis) 
+e os que retornam um novo array (imutáveis), essenciais para manipulação de dados.
+    */
 
     </script>
 </body>
