@@ -1,4 +1,4 @@
-// #region validar nota 
+// #region validar nota  COMENTADO
     /*
     let nota = Number(prompt('digite uma nota entre 0 e 10: '));
     while (nota < 0 || nota > 10 || isNaN(nota)){ 
@@ -56,7 +56,7 @@ function validarUsuarioSenha(){
 }
 // #endregion
 
-// #region verificar informaçoes
+// #region verificar informaçoes  COMENTADO
     /*
     Faça um programa que leia e valide as seguintes informações:
     Nome: maior que 3 caracteres;
@@ -110,7 +110,7 @@ function validardados() {
 }
 // #endregion
 
-// #region calculo populacional
+// #region calculo populacional  COMENTADO
     /*
     Supondo que a população de um país A seja da ordem de 80000 habitantes 
     com uma taxa anual de crescimento de 3% e que a população de B seja 200000 habitantes 
@@ -118,7 +118,7 @@ function validardados() {
     Faça um programa que calcule e escreva o número de anos necessários para que a população do país 
     A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
     */
-
+/*
 let populacaoA = 80000;   //numero de Habitantes da cidadeA
 let taxaA = 0.03;  //taxa de crescimento anual da população 3%
 let populacaoB = 200000;  //numero de Habitantes da cidadeB
@@ -138,6 +138,8 @@ if (populacaoA > populacaoB) { //verifica se a populaçao da cidade A e maior
 console.log(`Anos necessários: ${anos}`);
 console.log(`População A: ${Math.round(populacaoA)} habitantes`);
 console.log(`População B: ${Math.round(populacaoB)} habitantes`);
+*/
+
 // #endregion
 
 // #region calculo populacional com input no html
@@ -200,12 +202,12 @@ function taxacrescimento() {
 }
 // #endregion
 
-// #region programa que imprime na tela os números de 1 a 20
+// #region programa que imprime na tela os números de 1 a 20  COMENTADO
     /*
     Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. 
     Depois modifique o programa para que ele mostre os números um ao lado do outro.
     */
-
+/*
    // Programa 1
 for(let n=1; n<=20; n++){
     console.log(n)
@@ -222,10 +224,259 @@ for(let n=1; n<=20; n++){
 // dois resultados um feito com string e outro usando listas(ARRAY)  
 console.log(num.join(' ')) //ara a exibição lado a lado, join(" ") cria uma string com os números separados por espaço.
 console.log(linha)
+*/
+// #endregion
+
+// #region informar o maior numero  
+/*
+Faça um programa que leia 5 números e informe o maior número.
+*/
+function verificarnumnero(){
+    const numero1Input = document.querySelector("#n1").value;
+    const numero2Input = document.querySelector("#n2").value;
+    const numero3Input = document.querySelector("#n3").value;
+    const numero4Input = document.querySelector("#n4").value;
+    const numero5Input = document.querySelector("#n5").value;
+    const resultado = document.querySelector("#resultadonum");
+    
+    const numero1 = Number(numero1Input);
+    const numero2 = Number(numero2Input);
+    const numero3 = Number(numero3Input);
+    const numero4 = Number(numero4Input);
+    const numero5 = Number(numero5Input);
+
+    resultado.innerText=`Aqui esta o seu resultado: ${Math.max(numero1,numero2,numero3,numero4,numero5)}`;
+}
 
 // #endregion
 
+// #region Leia 5 números e informe a soma e a média dos números
+/*
+Faça um programa que leia 5 números e informe a soma e a média dos números.
+*/
+/*
+let veses = 5  //veses que o loop e executado
+let soma = 0 //variavel com a soma dos valores
 
+for (let n1=1; n1<=veses; n1++) { 
+    let nun = parseFloat(prompt(`Digite o numero:`)) //variavel que pede pro usuario digitar um numero
+    soma += nun //soma o valor da variavel a num com a variavel soma
+// ou seja se o usuario digitar 1,3,8,2,7 a variavel vai somar e gravar o resultado na variavel soma
+}
+let media = soma / veses //divide o valor de soma por veses
+
+alert(`"Soma:", ${soma}`);
+alert(`"Média:", ${media}`);
+*/
+// #endregion
+
+// #region imprima na tela apenas os números ímpares entre 1 e 50  COMENTADO
+/*
+Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
+*/
+/*
+for (let n=1; n<=50; n=n+2){
+    console.log(n)
+
+}
+*/
+// #endregion 
+
+// #region Altere o programa anterior para mostrar no final a soma dos números  COMENTADO
+
+//Altere o programa anterior para mostrar no final a soma dos números.
+/*
+let n1=0
+for (let n=1; n<=50; n=n+2){
+    n1 += n
+    console.log(n)
+}
+console.log("A soma dos números é:", n1);
+*/
+//#endregion
+
+// #region Tabuada  COMENTADO
+/*
+Desenvolva um gerador de tabuada, capaz de gerar a tabuada de qualquer número inteiro 
+entre 1 a 10. 
+O usuário deve informar de qual numero ele deseja ver a tabuada. 
+A saída deve ser conforme o exemplo abaixo:
+Tabuada de 5:
+5 X 1 = 5
+5 X 2 = 10
+...
+*/
+/*
+const n1 = 5
+console.log(`Tabuada do: ${n1}`)
+for (let n=1; n<=10; n++){
+    console.log(`${n1} X ${n} = ${n1*n}`)
+}
+*/
+// #endregion
+
+// #region base, expoente e calcule  COMENTADO
+/*
+Faça um programa que peça dois números, base e expoente, calcule e 
+mostre o primeiro número elevado ao segundo número. 
+Não utilize a função de potência da linguagem. 
+*/
+/*
+const base = 2;
+const expo = 3;
+const funcaoMath= Math.pow(base, expo);  //exemplo usando a função Math da linguagem
+console.log(base**expo);
+console.log(funcaoMath);
+*/
+// #endregion
+
+// #region numeros pares e impares COMENTADO
+/*
+Faça um programa que peça 10 números inteiros, 
+calcule e mostre a quantidade de números pares 
+e a quantidade de números ímpares.
+*/
+/*
+
+let par = 0;
+let impar = 0;
+for (let i=1; i<= 10;i++){
+    let numero = prompt();
+    let num  = parseInt(numero, 10); // base 10 garante decimal
+
+    if(isNaN(num)){
+        alert('nao é um numero');
+        i--;  // repete esta posição
+        continue;
+    }else if (num % 2 == 0){
+        par ++;
+    }else{
+        impar++;
+    }
+}
+alert(`numeros par: ${par}`);
+alert(`numeros impar: ${impar}`);
+*/
+
+
+
+
+// #endregion
+
+//#region COMENTADO
+/*
+A série de Fibonacci é formada pela sequência 1,1,2,3,5,8,13,21,34,55,... 
+Faça um programa capaz de gerar a série até o n−ésimo termo.
+Sequência de Fibonacci com laços
+*/
+/*
+function seq(num) {
+    let array = [0,1];  //array pra receber a sequencia com 0 e 1 ja inseridos
+    for (let i = 2; i < num; i++){
+        let somafibo =  array [ i -1 ] + array [i - 2]; 
+        array.push(somafibo);
+    }
+    return array.slice(0,num);  // Garante o tamanho correto
+}
+console.log(seq(10));
+*/
+
+//#endregion
+
+//#region  COMENTADO
+/*
+A série de Fibonacci é formada pela sequência 0,1,1,2,3,5,8,13,21,34,55,... 
+Faça um programa que gere a série até que o valor seja maior que 500.
+*/
+/*
+function fibo(n){
+    let a = 0
+    let b = 1
+    let resultado = []
+
+    while (a<= n){
+        resultado.push(a); //Adiciona o valor atual de a (que é um número de Fibonacci) ao array resultado.
+        let proximo = a + b; //Calcula o próximo número da sequência somando a (atual) e b (próximo da sequência).
+        a = b; //Atualiza a para ser o valor que antes era b (avançamos um passo).
+        b = proximo; //Atualiza b para ser o próximo número recém-calculado.
+    }
+    return resultado;
+}
+console.log(fibo(8))
+*/
+
+//#endregion
+
+//#region 
+/*
+Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário. 
+Ex.: 5!=5.4.3.2.1=120
+*/
+// aqui ta sendo feito o fatorial crescente colocando os valores dentro do array(lista)
+/*
+let n1 = 6;
+let n2 = 1
+let array = [];
+for(let i=1; i<= n1; i++){
+    n2 *= i;
+    array.push(n2); 
+}
+console.log(array);
+
+
+
+// aqui ta sendo feito o fatorial decrescente com funçao
+function fatdescrescente(n){
+    let n1 = 1;
+    let array = [];
+    for (let i=n;i >1;i--){
+        n1 *= i;
+        array.push(n1);
+    }
+    return array;
+}
+console.log(fatdescrescente(6));
+*/
+//#endregion
+
+//#region 
+/*
+Faça um programa que, dado um conjunto de N números, 
+determine o menor valor, o maior valor e a soma dos valores.
+*/
+/*
+let nume1 = 5
+let nume2 = 9
+let nume3 = 7
+
+let resulmax = Math.max(nume1,nume2,nume3)
+let resulmin = Math.min(nume1,nume2,nume3)
+let soma = nume1+nume2+nume3
+
+console.log(soma)
+console.log(resulmax)
+console.log(resulmin)
+*/
+//#endregion
+
+//let entra = 2
+let listanum = []; //lista vasia
+for (let i=0; i < 5; i++){ // repete o laço 5 vezes    listanum.push(entranum);
+    let entra = prompt(`digite aqui o ${i+1} numero`); //recebeo numero inserido no pronpt
+    let entranum = Number(entra); //coloca os numreros do prompt nessa variavel e transforma em nunero
+    listanum.push(entranum); //adiciona os numnero na lista
+
+} //fim do loop
+
+// REDUCE soma os valores do array
+const somar = listanum.reduce((a, b) => a + b, 0); //soma dos numeros
+
+const numeromax = listanum.reduce((a, b) => Math.max(a, b));  //pode ser feito com reduce
+const numeromin = Math.min(...listanum); //pode ser feito com spread que seria os 3 pontos
+
+alert(`soma dos numeros: ${somar}`);
+alert(`resultado com maior numero: ${numeromax}`);
+alert(`resultado com menor numero: ${numeromin}`);
 
 
 
