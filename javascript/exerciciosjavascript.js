@@ -363,7 +363,7 @@ alert(`numeros impar: ${impar}`);
 
 // #endregion
 
-//#region COMENTADO
+//#region sequencia fibonacci com n-ésimo termo  COMENTADO
 /*
 A série de Fibonacci é formada pela sequência 1,1,2,3,5,8,13,21,34,55,... 
 Faça um programa capaz de gerar a série até o n−ésimo termo.
@@ -383,7 +383,7 @@ console.log(seq(10));
 
 //#endregion
 
-//#region  COMENTADO
+//#region sequencia fibonacci com valor acima de 500  COMENTADO
 /*
 A série de Fibonacci é formada pela sequência 0,1,1,2,3,5,8,13,21,34,55,... 
 Faça um programa que gere a série até que o valor seja maior que 500.
@@ -407,25 +407,28 @@ console.log(fibo(8))
 
 //#endregion
 
-//#region 
+//#region fatorial de um numero intero COMENTADO
 /*
 Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário. 
 Ex.: 5!=5.4.3.2.1=120
 */
+// METODO 1
 // aqui ta sendo feito o fatorial crescente colocando os valores dentro do array(lista)
+
 /*
 let n1 = 6;
-let n2 = 1
+let n2 = 1;
 let array = [];
 for(let i=1; i<= n1; i++){
-    n2 *= i;
-    array.push(n2); 
+    //n2 *= i;
+    array.push(n2 *=i); 
 }
 console.log(array);
+*/
 
-
-
+// METODO 2
 // aqui ta sendo feito o fatorial decrescente com funçao
+/*
 function fatdescrescente(n){
     let n1 = 1;
     let array = [];
@@ -437,13 +440,16 @@ function fatdescrescente(n){
 }
 console.log(fatdescrescente(6));
 */
+
+
 //#endregion
 
-//#region 
+//#region menor valor, maior valor e soma dos valores COMENTADO
 /*
 Faça um programa que, dado um conjunto de N números, 
 determine o menor valor, o maior valor e a soma dos valores.
 */
+// METODO 1
 /*
 let nume1 = 5
 let nume2 = 9
@@ -457,11 +463,11 @@ console.log(soma)
 console.log(resulmax)
 console.log(resulmin)
 */
-//#endregion
 
-//let entra = 2
+// METODO 2
+/*
 let listanum = []; //lista vasia
-for (let i=0; i < 5; i++){ // repete o laço 5 vezes    listanum.push(entranum);
+for (let i=0; i < 5; i++){ // repete o laço 5 vezes 
     let entra = prompt(`digite aqui o ${i+1} numero`); //recebeo numero inserido no pronpt
     let entranum = Number(entra); //coloca os numreros do prompt nessa variavel e transforma em nunero
     listanum.push(entranum); //adiciona os numnero na lista
@@ -477,7 +483,75 @@ const numeromin = Math.min(...listanum); //pode ser feito com spread que seria o
 alert(`soma dos numeros: ${somar}`);
 alert(`resultado com maior numero: ${numeromax}`);
 alert(`resultado com menor numero: ${numeromin}`);
+*/
+
+//#endregion
+
+//#region menor valor, maior valor e soma dos valores de 0 até 1000 COMENTADO
+/*
+Altere o programa anterior para que ele aceite apenas números entre 0 e 1000.
+*/
+/*
+let listaNumeros = []
+for (let i=1; i<=5; i++){
+    let entrada;
+    let convertEmNumero;
+    do{
+        entrada = prompt(`${i} Tentativa. Digite aqui um numero: `);
+        convertEmNumero = Number(entrada);
+        if (convertEmNumero > 1000){
+            alert(`numero ultrapassou 1000!.`)
+        }
+    }while(isNaN(convertEmNumero) || entrada === " "|| entrada.trim().length === 0|| convertEmNumero > 1000);
+    listaNumeros.push(convertEmNumero);
+} //fim do loop
+
+// REDUCE soma os valores do array
+const somar = listaNumeros.reduce((a, b) => a + b, 0); //soma dos numeros
+
+const numeromax = listaNumeros.reduce((a, b) => Math.max(a, b));  //pode ser feito com reduce
+const numeromin = Math.min(...listaNumeros); //pode ser feito com spread que seria os 3 pontos
+
+alert(`Soma dos Numeros: ${somar}`);
+alert(`Resultado com maior numero: ${numeromax}`);
+alert(`Resultado com menor numero: ${numeromin}`);
+alert(`Numeros Inseridos: ${listaNumeros}`);
+*/
+//#endregion
+
+//#region o usuário pode calcular o fatorial várias vezes limitado a 16 COMENTADO
+/*
+Altere o programa de cálculo do fatorial, 
+permitindo ao usuário calcular o fatorial várias vezes 
+e limitando o fatorial a números inteiros positivos e menores que 16.
+
+AQUI ELE TA PEDINDO PRA LIMITAR O FATORIAL NO DECIMO QUINTO LUGAR 
+ENTAO ELE FAZ O CSLCULO FATORIAL ATÉ NO MAXIMO 15 VESES QUE SERIA O NUMERO: 1307674368000
+*/
+
+/*
+while(true){ //aqui temos um laço que repete sempre mass e parado prelo break do if caso entre no if
+    let limite = prompt(`digite aqui o numero: `);
+    if (limite === null || limite.toLowerCase() === 'sair'){
+        alert(`programa encerrado!`);
+        break;  //para o loop
+    }
+
+    let limiteNum=Number(limite);
+    if(!Number.isInteger(limiteNum) || limiteNum < 1 || limiteNum >15){
+        alert(`Insira um numero interio valido!`);
+        continue;  //continue pula o resto do codigo 
+        // ai o loop chama novamente
+    }
+
+    let fatorial = 1;
+    for (let i=2; i<=limiteNum; i++){
+    fatorial *= i;
+    }
+    alert(fatorial);
+}
+*/
 
 
-
+//#endregion
 
