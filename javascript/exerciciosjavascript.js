@@ -1,3 +1,6 @@
+//Você OBRIGATORIAMENTE precisa desta linha no topo:
+const prompt = require('prompt-sync')();
+
 // #region validar nota  COMENTADO
     /*
     let nota = Number(prompt('digite uma nota entre 0 e 10: '));
@@ -555,3 +558,156 @@ while(true){ //aqui temos um laço que repete sempre mass e parado prelo break d
 
 //#endregion
 
+//#region 
+/*
+Faça um programa que peça um número inteiro e determine se ele é ou não um número primo. 
+Um número primo é aquele que é divisível somente por ele mesmo e por 1.
+*/
+/*
+function numPrimo(numero){
+    if (numero <= 1) return false;
+    if (numero === 2) return true;
+    
+    for(let i = 2;i <= Math.sqrt(numero); i++){
+        if(numero % i === 0)
+            return false;
+    }
+    return lista;
+}
+let numero = 17
+if(numPrimo(numero)){
+    console.log(numero + ' é primo');
+}else{
+    console.log(numero + ' nao é primo');
+}
+
+*/
+
+/*Vou te mostrar o que acontece dentro do computador quando ele lê esse código com numero = 7:
+
+O computador vê a palavra function e guarda a receita da função na memória, mas não executa ela ainda.
+
+Chega em let numero = 7;. Ele guarda o 7 na memória.
+
+Chega em if (numPrimo(numero)). Ele precisa do resultado, então ele entra na função.
+
+Dentro da função, numero agora vale 7.
+
+if (7 <= 1)? Falso. Pula.
+
+if (7 === 2)? Falso. Pula.
+
+Entra no for:
+
+let i = 2. 2 <= Math.sqrt(7)? Math.sqrt(7) é ~2.64. 2 é menor que 2.64? Sim.
+
+if (7 % 2 === 0)? 7 % 2 é 1. 1 === 0? Falso. Não entra no return.
+
+Volta para o for: i++ faz o i virar 3.
+
+3 <= Math.sqrt(7)? 3 é menor ou igual a 2.64? Não. O laço termina.
+
+Saiu do laço sem achar nada. Chega no return true;. 
+A função devolve true para quem chamou.
+
+Volta para o if (ehPrimo(7)). Agora o JavaScript enxerga if (true).
+
+Como é true, entra no primeiro console.log, imprimindo "7 é primo".
+*/
+
+/*Resumo Gráfico do Fluxo
+text
+Chamou ehPrimo(7)
+    │
+    ├─ 7 <= 1? ──── Não ──► Pula
+    │
+    ├─ 7 === 2? ─── Não ──► Pula
+    │
+    ├─ Laço FOR: i = 2 até raiz(7) ≈ 2.64
+    │      │
+    │      ├─ 7 % 2 == 0? ── Não ──► Continua
+    │      │
+    │      └─ i = 3. 3 <= 2.64? ── Não ──► Sai do laço
+    │
+    └─ Retorna TRUE ───────► Imprime "7 é primo"
+
+*/
+//#endregion
+
+//#region 
+/*
+Altere o programa de cálculo dos números primos, 
+informando, caso o número não seja primo, 
+por quais número ele é divisível.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+//#endregion
+
+//#region 
+/*
+Faça um programa que calcule o mostre a média aritmética de N notas.
+*/
+let n = prompt(`numero: `)
+let lista = []
+for(let i=0; i<n; i++){
+    let numero = prompt(`digite aqui seu numero: `)
+    let listanumero = Number(numero);
+    lista.push(listanumero);
+
+}
+const numeromax = lista.reduce((a, b) => Math.max(a, b));  //pode ser feito com reduce
+
+console.log(numeromax)
+
+/*
+
+let soma = 0
+let divisao 
+let veses = 3
+let notas = 0
+let n = 0
+for (i=0; i<=n; i++){
+    while(true){
+    n = prompt(`digite seu numero aqui`)
+    notas = prompt(`digite aqui sua nota : `)
+    veses =veses +i
+    let notass = notass+ notas
+    divisao = Math.floor(notas /n)
+    console.log(notas)
+    console.log(divisao)
+    }
+}
+
+let ssoma = notass + notass
+console.log(ssoma)
+*/
+//console.log(soma)
+//console.log(divisao)
+
+//let nota = 7
+//console.log(mediaAritrimetrica())
+/*
+let nota1 = 7
+let nota2 = 8
+let nota3 = 10
+let soma = nota1 + nota2 + nota3
+let divisao = Math.floor(soma /3)
+*/
+//console.log(divisao)
+
+
+
+
+
+//#endregion
